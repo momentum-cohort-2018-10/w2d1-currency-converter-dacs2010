@@ -42,7 +42,9 @@ Use test-driven development to design a function called `convert`. Below is a li
 
 ### Steps:
 
-- Create a function called `convert` that takes a list called `rates`, a number called `value`, a string called `from`, and a string called `to`. Make sure than when you call `convert` with `from` and `to` being equal, the return value is the same as `value`.
+- Create a function called `convert` that takes a list called `rates`, a number called `value`, a string called `from`, and a string called `to`.
+
+- Make sure than when you call `convert` with `from` and `to` being equal, the return value is the same as `value`.
 
 - The `rates` list should contain a list of tuples, with each tuple containing a currency code you can convert from, a currency code you can convert to, and a rate.
 
