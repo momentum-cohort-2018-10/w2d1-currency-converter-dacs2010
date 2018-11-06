@@ -22,7 +22,13 @@ def test_currency_convert_backwards():
 def test_many_rates():
     assert convert(
         rate = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)], value = 1, current = "USD", to = "EUR") == 0.74
+    assert round(convert(
+        rate = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)], value = 1, current = "EUR", to = "USD"), 2) == 1.35
     assert convert(
         rate = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)], value = 1, current = "EUR", to = "JPY") == 145.949
+    assert round (convert(
+        rate = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)], value = 1, current = "JPY", to = "EUR"), 5) == 0.00685
 
-# def test_the_back_and_forth():
+def test_broken_conversion ():
+    assert round (convert(
+        rate = [("USD", "EUR", 0.74), ("EUR", "JPY", 145.949)], value = 1, current = "CAN", to = "GBP"), 5) == 1
